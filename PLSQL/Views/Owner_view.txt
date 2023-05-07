@@ -1,0 +1,2 @@
+create view Owners_view as select Owner_Name, OWNER_EMAIL from Owner;
+select * from Owners_view;

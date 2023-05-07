@@ -1,0 +1,5 @@
+create view maxavgsal_view as 
+select A_ID
+from SalarayScale 
+where EMPLOYEE_SALARY > (select avg(EMPLOYEE_SALARY) from SalarayScale);
+SELECT * FROM maxavgsal_view;

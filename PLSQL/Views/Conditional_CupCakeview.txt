@@ -1,0 +1,5 @@
+create view conditional_cupCakeview as 
+select Cupcake_Name, Ingredients 
+from cupCakeDetails 
+where EXPIRE_DATE = 'four days';
+select * from conditional_cupCakeview;

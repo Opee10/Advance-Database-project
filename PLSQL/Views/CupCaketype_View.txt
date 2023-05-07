@@ -1,0 +1,2 @@
+create view Cupcaketype_view as select Cupcake_Name, Ingredients from cupCakeDetails;
+select * from Cupcaketype_view;
