@@ -1,0 +1,16 @@
+1.Create a Function to display maximum Salary of an employee in from SalaryScale table.
+
+sCreate or replace function Maxsalary
+return number as
+Maxsal_var number(20) := 0;
+Begin
+select MAX(EMPLOYEE_SALARY) into Maxsal_var from SALARAYSCALE;
+return Maxsal_var;
+End;
+
+Declare
+  var NUMBER(20);
+Begin
+  var := Maxsalary();
+  dbms_output.put_line('Minimum Salary: ' || var);
+End;

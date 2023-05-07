@@ -1,0 +1,18 @@
+2.Create a function to find a customer name which who belongs in ‘Mymensingh’ from MenuCardOrder
+
+Create or replace function FindCustomerName(address in varchar2)
+return varchar2
+IS
+  name varchar2(20);
+Begin
+  Select customer_Name INTO name from MenuCardOrder
+  where customer_address = address;
+  RETURN name;
+End;
+
+Declare
+  name varchar2(20);
+Begin
+  name := FindCustomerName('Mymensingh');
+  dbms_output.put_line('Customer name who is from Mymensingh: ' || name);
+END; 
