@@ -1,0 +1,9 @@
+Create table Employee (Employee_ID number(10) primary key, Employee_name varchar2(50), shop_license number(10), a_ID number(8));
+create sequence emp_sequ
+start with 1
+increment by 5
+maxvalue 100
+nocache
+nocycle;
+INSERT INTO Employee VALUES (emp_sequ.NEXTVAL, 'Opee', 8888, 8);
+select * from employee

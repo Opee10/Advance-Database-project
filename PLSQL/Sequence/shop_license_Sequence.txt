@@ -1,0 +1,10 @@
+Create table shopDetails (shop_license number(10) primary key, Shop_Name varchar2(40),
+Shop_address varchar2(90), shop_Email varchar2(100));
+create sequence shop_sequ
+start with 25
+increment by 2
+maxvalue 100000
+nocache
+nocycle;
+INSERT INTO shopDetails VALUES (emp_sequ.NEXTVAL, 'Aesthetic Sweets', 'Dhaka Gulshan road 2' , 'Aesthetic@gmail.com');
+select * from shopDetails

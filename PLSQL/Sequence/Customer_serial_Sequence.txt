@@ -1,0 +1,10 @@
+Create table customerDetails (CUSTOMER_SERIAL number(15) primary key, CUSTOMER_NAME varchar2(25), CUSTOMER_ADDRESS varchar2(40), SHOP_LICENSE number(10));
+create sequence cus_sequ
+start with 99
+increment by 2
+maxvalue 500
+nocache
+nocycle;
+INSERT INTO customerDetails VALUES (emp_sequ.NEXTVAL, 'Opee', 'Kuril' , 9898);
+INSERT INTO customerDetails VALUES (emp_sequ.NEXTVAL, 'Shafiul', 'Kuril' , 9898);
+select * from customerDetails
