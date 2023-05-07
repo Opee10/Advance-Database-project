@@ -1,0 +1,21 @@
+4.Create a Procedure to insert a new row into the cupCakeDetails table, with a value for each column in the table.
+
+Create or replace procedure insert_cupcake_details ( p_cupcake_name IN varchar2, 
+                      p_ingredients IN varchar2, 
+                      p_expire_date IN varchar2, 
+                      p_customer_serial IN number
+)
+as
+Begin
+    Insert into cupCakeDetails ( Cupcake_Name, Ingredients, Expire_Date,customer_serial) 
+     values ( p_cupcake_name,p_ingredients,  p_expire_date, p_customer_serial);
+    Commit;
+End;
+Begin
+    insert_cupcake_details(
+        'Chocolate Fudge Fantasy',
+        'Cocoa Powder, Butter, Egg, Butter, Milk, Flour, Sugar',
+        'five days',
+        5
+    );
+End;

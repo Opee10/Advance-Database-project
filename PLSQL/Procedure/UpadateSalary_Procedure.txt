@@ -1,0 +1,21 @@
+6.Create a procedure that update a employees salary to 15000 from SalarayScale table who work ‘Ten Hours’ per day.
+
+Create or replace Procedure updateSalary( 
+                            working_hours IN SalarayScale.Employee_working_hour%TYPE,
+                             salary_out OUT number)
+is
+Begin
+    update SalarayScale
+    set Employee_salary = 15000
+    where Employee_working_hour = working_hours;
+    
+    Select Employee_salary INTO salary_out FROM SalarayScale WHERE Employee_working_hour = working_hours;
+   
+    dbms_output.put_line('The salary for employees working ' || working_hours || ' has been updated to ' || salary_out);
+End;
+
+Declare
+    salary number;
+Begin
+    updateSalary('Ten Hours', salary);
+End; 

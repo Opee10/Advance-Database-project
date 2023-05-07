@@ -1,0 +1,23 @@
+5.Create a procedure to find A_ID of an employee with maximum amount of salary from  Salarayscale Table.
+
+Create or replace Procedure highest_sal_AID(
+   var_a_ID OUT number,
+   var_max_salary OUT number
+)
+As
+Begin
+   Select a_ID, Employee_salary
+   into var_a_ID, var_max_salary
+   from SalarayScale
+   where Employee_salary = (SELECT MAX(Employee_salary) FROM SalarayScale);
+   
+    dbms_output.put_line ('The employee with the highest salary has A_ID : ' || var_a_ID);
+    dbms_output.put_line ('The maximum salary is ' || var_max_salary);
+End;
+
+Declare
+   v_a_ID number(15);
+   v_max_salary number(15);
+Begin
+   highest_sal_AID(v_a_ID, v_max_salary);
+End;
